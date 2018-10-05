@@ -1,0 +1,14 @@
+version: '2'
+services:
+  api-nodejs:
+    image: node:9.11.2-alpine
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/home/api
+    working_dir: /home/api
+    command: npm run test
+    links:
+      - mongodb
+  mongodb:
+    image: mongo:3.6.8

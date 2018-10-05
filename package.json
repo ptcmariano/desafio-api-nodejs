@@ -1,13 +1,13 @@
 {
   "name": "desafio-api-nodejs",
   "version": "1.0.0",
-  "description": "desafio api",
+  "description": "desafio api nodejs",
   "main": "api.js",
   "scripts": {
     "start": "nodemon api.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 5000 tests/*"
   },
-  "author": "Paulo Tiago",
+  "author": "Paulo Tiago Castanho Mariano <paulotiagocm@hotmail.com>",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -16,6 +16,9 @@
     "mongoose": "^5.3.1"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0",
     "nodemon": "^1.18.4"
   }
 }
