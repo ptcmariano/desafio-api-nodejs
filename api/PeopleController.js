@@ -20,6 +20,13 @@ class PeopleController {
         })
         .catch((err) => { console.log(err); });
     }
+
+    async delete(req, res, next) {
+        await this.model.delete(req.body._id).then((fetch) => {
+            res.send(fetch);
+        })
+        .catch((err) => { console.log(err); });
+    }
 }
 
 module.exports = PeopleController;

@@ -10,7 +10,9 @@
   "author": "Paulo Tiago",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "express-modify-response": "^1.0.2",
     "mongoose": "^5.3.1"
   },
   "devDependencies": {

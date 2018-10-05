@@ -22,6 +22,10 @@ class People {
     async post(data) {
         return await this.model(data).save();
     }
+
+    async delete(id) {
+        return await this.model.deleteOne({"_id":id});
+    }
 }
 
 module.exports = People;
