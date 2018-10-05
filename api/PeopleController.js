@@ -7,13 +7,18 @@ class PeopleController {
         this.entity = entity;
     }
 
-    post(req, res, next) {
-        console.log(this.model);
-        return res.send('response');
+    async post(req, res, next) {
+        await this.model.post(req.body).then((fetch) => {
+            res.send(fetch);
+        })
+        .catch((err) => { console.log(err); });
     }
 
     async getAll(req, res, next) {
-        await res.send(await this.model.getAll());
+        await this.model.getAll().then((fetch) => {
+            res.send(fetch);
+        })
+        .catch((err) => { console.log(err); });
     }
 }
 

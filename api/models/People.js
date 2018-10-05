@@ -1,22 +1,26 @@
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://mongodb/apidesafio', {useNewUrlParser: true});
-let model = mongoose.model('People', { name: String });
+let model = mongoose.model('People', {
+    name: String,
+    email: String,
+    password: String,
+    cpf: String,
+    phone: String,
+    address: String
+});
 
 class People {
     constructor() {
         this.model = model;
-        
-        const fulano = this.model({ name: 'Zildjian' });
-        fulano.save().then(() => console.log('hiho'))
-        .catch(() => console.log('err'));
     }
 
     async getAll() {
-        return await this.model.find().exec(function (err, docs) {
-            console.log(err,docs);
-                return docs;
-            });
+        return await this.model.find().exec();
+    }
+
+    async post(data) {
+        return await this.model(data).save();
     }
 }
 
