@@ -35,3 +35,7 @@ Paulo Tiago Castanho Mariano <paulotiagocm@hotmail.com>
     address: String
 }
 - DELETE http://localhost:3000/api/v1/people com header "Content-Type":"application/x-www-form-urlencoded" e body {"_id":"id a ser apagado"}
+
+## para testar
+
+  docker-compose -f docker-compose-test.yml up --abort-on-container-exit
